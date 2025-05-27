@@ -47,3 +47,20 @@ exports.getProfile = async (req, res) => {
   const user = req.user;
   res.json(user);
 };
+
+// GET /api/auth/users
+const getAllUsers = async (req, res) => {
+  try {
+    const users = await User.find().select('-password'); // Exclude passwords
+    res.status(200).json(users);
+  } catch (error) {
+    res.status(500).json({ message: 'Server error', error: error.message });
+  }
+};
+
+module.exports = {
+  registerUser,
+  loginUser,
+  getProfile,
+  getAllUsers, // Add this line
+};
