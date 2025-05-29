@@ -5,6 +5,7 @@ const {
   createUser,
   getAllUsers,
   getUserById,
+  deleteUser
 } = require('../controllers/userController');
 
 const { protect } = require('../middlewares/userMiddleware'); // optional auth middleware
@@ -23,5 +24,7 @@ router.get('/', getAllUsers);
 // @desc    Get user by ID
 // @access  Protected
 router.get('/:id', getUserById);
+
+router.delete('/:id', deleteUser); // Protected route to delete user
 console.log('User routes loaded');
 module.exports = router;
