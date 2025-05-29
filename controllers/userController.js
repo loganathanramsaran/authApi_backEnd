@@ -87,6 +87,7 @@ const updateUser = async (req, res) => {
     }
     res.status(200).json({
       message: 'User updated successfully',
+      updatedUser: user.name,
       user: {
         _id: user._id,
         name: user.name,
