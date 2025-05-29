@@ -7,7 +7,7 @@ const {
   getUserById,
 } = require('../controllers/userController');
 
-const { protect } = require('../middlewares/authMiddleware'); // optional auth middleware
+const { protect } = require('../middlewares/userMiddleware'); // optional auth middleware
 
 // @route   POST /api/auth/users
 // @desc    Register a new user
