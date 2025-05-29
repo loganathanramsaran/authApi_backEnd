@@ -17,11 +17,11 @@ router.post('/', createUser);
 // @route   GET /api/auth/users
 // @desc    Get all users
 // @access  Protected
-router.get('/', protect, getAllUsers);
+router.get('/', getAllUsers);
 
 // @route   GET /api/auth/users/:id
 // @desc    Get user by ID
 // @access  Protected
-router.get('/:id', protect, getUserById);
+router.get('/:id', getUserById);
 console.log('User routes loaded');
 module.exports = router;
